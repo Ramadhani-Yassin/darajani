@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV = [
@@ -29,8 +30,17 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Link href="/" className="font-serif text-2xl font-medium text-white">
-          Darajani
+        <Link href="/" className="flex items-center shrink-0">
+          <span className="relative flex h-12 w-12 overflow-hidden rounded-full border-2 border-white/40 shadow-md ring-2 ring-white/10">
+            <Image
+              src="/assets/Logo.png"
+              alt="Darajani — Motel, Camping & Tour Operations"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority
+            />
+          </span>
         </Link>
         <nav className="hidden md:flex md:items-center md:gap-10">
           {NAV.map(({ href, label }) => (

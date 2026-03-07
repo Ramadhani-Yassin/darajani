@@ -26,7 +26,7 @@ const ITEMS = [
     icon: "♥",
     title: "Community Impact",
     description:
-      "Your stay supports the local economy and community programs in Sana Juu, Siha.",
+      "Your stay supports the local economy and community programs in Sanya Juu, Siha.",
   },
 ];
 

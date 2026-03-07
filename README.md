@@ -1,6 +1,6 @@
 # Darajani — Next.js Website
 
-Premium tourism website for **Darajani Motel, Camping & Tour Operations** (Sana Juu, Siha, Kilimanjaro Region, Tanzania).
+Premium tourism website for **Darajani Motel, Camping & Tour Operations** (Sanya Juu, Siha, Kilimanjaro Region, Tanzania).
 
 ## Stack
 

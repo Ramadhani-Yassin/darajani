@@ -16,7 +16,7 @@ const lato = Lato({
 export const metadata = {
   title: "Darajani — Your Gateway to Mount Kilimanjaro, Culture & Community",
   description:
-    "Start closer to the mountain — treks, accommodation, culture and community programs near Kilimanjaro International Airport. Sana Juu, Siha, Tanzania.",
+    "Start closer to the mountain — treks, accommodation, culture and community programs near Kilimanjaro International Airport. Sanya Juu, Siha, Tanzania.",
 };
 
 export default function RootLayout({ children }) {

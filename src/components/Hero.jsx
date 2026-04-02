@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const WHATSAPP = "https://wa.me/255000000000";
+const WHATSAPP = "https://wa.me/255764101435";
 const EMAIL = "info@darajani.com";
 
 export default function Hero() {

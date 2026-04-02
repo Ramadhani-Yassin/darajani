@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const WHATSAPP = "https://wa.me/255000000000";
+const WHATSAPP = "https://wa.me/255764101435";
 const BUDGET_OPTIONS = ["Budget", "Mid-range", "Premium"];
 
 export default function Booking() {

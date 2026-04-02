@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const WHATSAPP = "https://wa.me/255000000000";
+const WHATSAPP = "https://wa.me/255764101435";
 const EMAIL = "info@darajanikilimanjaro.com";
 const FACEBOOK = "https://facebook.com/darajanimotel";
 const INSTAGRAM = "https://www.instagram.com/darajani_motel";
@@ -38,9 +38,17 @@ const socialLinks = [
     href: `mailto:${EMAIL}`,
     label: "Gmail / Email",
     icon: (
-      <svg className="h-5 w-5" fill="#B8A88A" viewBox="0 0 24 24" aria-hidden>
-        <path d="M24 5.457v13.909c0 .857-.695 1.554-1.552 1.554H1.552A1.552 1.552 0 010 19.366V5.457c0-1.26 1.38-2.043 2.46-1.558l9.54 4.546 9.54-4.546c1.08-.485 2.46.298 2.46 1.558z" />
-        <path d="M12 12.546L.254 3.284C.094 3.169 0 2.988 0 2.806V2.554C0 1.696.695 1 1.552 1h20.896C23.305 1 24 1.696 24 2.554v.252c0 .182-.094.363-.254.478L12 12.546z" />
+      <svg
+        className="h-5 w-5 text-[#A8C5F0]"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="1.75"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
   },

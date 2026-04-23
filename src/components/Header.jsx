@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const NAV = [
   { href: "#experiences", label: "Experiences" },
   { href: "#packages", label: "Packages" },
+  { href: "#gallery", label: "Gallery" },
   { href: "#why", label: "Why Darajani" },
   { href: "#audiences", label: "For You" },
   { href: "#booking", label: "Book" },

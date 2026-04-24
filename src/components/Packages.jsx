@@ -122,37 +122,27 @@ const PACKAGE_ITEMS = [
   {
     icon: "sightseeing",
     title: "Kilimanjaro & Arusha Sightseeing",
-    body: "Waterfalls, coffee tours, hot springs, rural farms, and wildlife safaris including Arusha National Park and Ngorongoro.",
-  },
-  {
-    icon: "culture",
-    title: "Community & Cultural Tourism",
-    body: "Chagga cooking, coffee roasting, village stays, farming experiences, and cultural immersion programs.",
+    body: "Waterfalls, hot springs, coffee traditions and immersive cultural programs.",
   },
   {
     icon: "biology",
-    title: "Biology & Ecology Study Abroad",
-    body: "Field studies in ecosystems, biodiversity, agroforestry, and climate impact across Kilimanjaro zones.",
-  },
-  {
-    icon: "biomedical",
-    title: "Biomedical Study Abroad",
-    body: "Public health and rural healthcare exposure, community health systems, and clinical observation programs.",
-  },
-  {
-    icon: "volunteer",
-    title: "Healthcare Volunteering",
-    body: "Community outreach, education programs, and health support activities for students and volunteers.",
+    title: "Study Abroad & Volunteering",
+    body: "Tailor-made study abroad, and volunteering programs, focused on child education, ecology Biomedical &healthcare, and community development.",
   },
   {
     icon: "circuit",
-    title: "Zanzibar – Dar – Bagamoyo – Mikumi Circuit",
-    body: "Island, coastal heritage, and safari experience combining ferry, road, and train travel.",
+    title: " Northern Circuit Safari Package",
+    body: "Explore Tanzania’s iconic parks—Tarangire National Park, Lake Manyara National Park, Ngorongoro Conservation Area, and Serengeti National Park.",
+  },
+    {
+    icon: "circuit",
+    title: "Coastal & Southern Highlands Safari Package",
+    body: "Discover a blend of coast and wilderness in Zanzibar, Mikumi National Park, and Udzungwa Mountains National Park.",
   },
   {
     icon: "transport",
     title: "Train, Ferry & Road Travel Packages",
-    body: "Dar–Morogoro train experiences, Zanzibar ferry trips, and private road safari circuits.",
+    body: "Experience Dar–Morogoro rail journeys, scenic Zanzibar ferry trips, and customized private road safari circuits.",
   },
 ];
 

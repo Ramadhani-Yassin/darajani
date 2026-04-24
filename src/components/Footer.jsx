@@ -72,7 +72,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 max-w-sm text-sm text-white/70">
-              Motel, Camping & Tour Operations — Sanya Juu, Siha, Kilimanjaro Region, Tanzania
+              Kilimanjaro to Safari—Your Journey, Your Way.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">

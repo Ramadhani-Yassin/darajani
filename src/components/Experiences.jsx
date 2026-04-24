@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 const EXPERIENCES = [
   {
-    title: "Kilimanjaro Treks (Lemosho Route)",
+    title: "Mount Kilimanjaro Trekking",
     description:
       "Guided summit treks on the scenic Lemosho route. Start from our base near JRO for a smoother, closer-to-mountain experience.",
     image: "/assets/mt-kilimanjaro-route.png",
@@ -22,21 +22,21 @@ const EXPERIENCES = [
   {
     title: "Chagga Culture & Coffee",
     description:
-      "Hand roasting, ghee making, and authentic Chagga dishes. Taste real Kilimanjaro coffee.",
+      " Local farming, Coffee tradition, ghee making, stingless-honey bee farming,Chagga cuisine&indigenous medicinal practices.",
     image: "/assets/coffee.png",
     alt: "Kilimanjaro coffee",
   },
   {
-    title: "Rural Siha Day Tours",
+    title: "Safari",
     description:
-      "Plantations, stingless bees, and farms. Discover the highlands of Siha in one-day guided tours.",
-    image: "/assets/chagga-and-white-tourists.png",
+      "Northen ircuit: Tarangire,Lake Manyara, Ngorongoro,Serengeti,Costal &Southern Highlands-Zanzibar-Mikumi-Udzungwa Gorilla trekking",
+    image: "/assets/safari.png",
     alt: "Cultural exchange in Siha",
   },
   {
-    title: "Volunteer & Educational Programs",
+    title: "Study abroad & volunteering",
     description:
-      "Meaningful community engagement with supervision and clear learning outcomes.",
+      "Meaningful community engagement with supervision and clear learning outcomes in education, healthcare, and community programs",
     image: "/assets/volunteer-and-educational-programs.png",
     alt: "Community and culture",
   },

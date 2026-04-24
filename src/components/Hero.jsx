@@ -29,7 +29,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#F6F1E9]/80"
         >
-          Sanya Juu, Siha — Kilimanjaro Region
+          Siha - Tanzania
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 24 }}

@@ -35,7 +35,7 @@ export default function WhyDarajani() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="why" className="bg-white py-24 md:py-32" ref={ref}>
+    <section id="why" className="bg-[#fefcf7] pb-14 pt-10 md:pb-18 md:pt-12" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
@@ -48,7 +48,7 @@ export default function WhyDarajani() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.05 }}
-          className="mt-2 font-serif text-3xl font-medium text-[#1F3D2B] sm:text-4xl"
+          className="mt-2 text-3xl font-medium text-[#1F3D2B] sm:text-4xl"
         >
           Why Darajani
         </motion.h2>

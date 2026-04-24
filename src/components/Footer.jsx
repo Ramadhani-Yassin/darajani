@@ -56,7 +56,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] py-16 text-[#F6F1E9]">
+    <footer className="mt-12 rounded-t-[3rem] bg-[#1b3028] py-16 text-[#cfddd5]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
           <div className="flex flex-col items-center md:items-start">
@@ -71,7 +71,7 @@ export default function Footer() {
                 />
               </span>
             </Link>
-            <p className="mt-3 max-w-sm text-sm text-white/70">
+            <p className="mt-3 max-w-sm text-sm text-[#cfddd5]/85">
               Kilimanjaro to Safari—Your Journey, Your Way.
             </p>
           </div>
@@ -80,20 +80,20 @@ export default function Footer() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-white/90 hover:text-white"
+              className="text-sm font-medium text-[#cfddd5] hover:text-white"
             >
               WhatsApp
             </a>
-            <a href={`mailto:${EMAIL}`} className="text-sm font-medium text-white/90 hover:text-white">
+            <a href={`mailto:${EMAIL}`} className="text-sm font-medium text-[#cfddd5] hover:text-white">
               Email
             </a>
-            <Link href="#experiences" className="text-sm font-medium text-white/90 hover:text-white">
+            <Link href="#experiences" className="text-sm font-medium text-[#cfddd5] hover:text-white">
               Experiences
             </Link>
-            <Link href="#packages" className="text-sm font-medium text-white/90 hover:text-white">
+            <Link href="#packages" className="text-sm font-medium text-[#cfddd5] hover:text-white">
               Packages
             </Link>
-            <Link href="#booking" className="text-sm font-medium text-white/90 hover:text-white">
+            <Link href="#booking" className="text-sm font-medium text-[#cfddd5] hover:text-white">
               Book
             </Link>
           </div>

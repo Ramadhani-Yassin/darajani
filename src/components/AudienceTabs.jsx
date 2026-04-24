@@ -39,12 +39,12 @@ export default function AudienceTabs() {
   const current = TABS.find((t) => t.id === active);
 
   return (
-    <section id="audiences" className="bg-[#F6F1E9] py-24 md:py-32" ref={ref}>
+    <section id="audiences" className="bg-[#fefcf7] py-14 md:py-18" ref={ref}>
       <div className="mx-auto max-w-4xl px-6">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7A5230]"
+          className="text-center text-sm font-semibold uppercase tracking-[0.15em] text-[#5f6c66]"
         >
           For every traveller
         </motion.span>
@@ -52,7 +52,7 @@ export default function AudienceTabs() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.05 }}
-          className="mt-2 font-serif text-3xl font-medium text-[#1F3D2B] sm:text-4xl"
+          className="mt-2 text-center text-4xl font-semibold text-[#1f543e]"
         >
           For You
         </motion.h2>
@@ -60,20 +60,20 @@ export default function AudienceTabs() {
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="mt-3 text-[#1A1A1A]/75"
+          className="mt-3 text-center text-[#5f6c66]"
         >
-          Whether you're a traveller, agent, NGO, or school, we have something for you.
+          Whether you&apos;re a traveller, agent, NGO, or school, we have something for you.
         </motion.p>
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div className="mt-10 flex flex-wrap justify-center gap-3 border-b border-[#ddd8cf] pb-4">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActive(tab.id)}
-              className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition ${
+              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${
                 active === tab.id
-                  ? "bg-[#1F3D2B] text-white"
-                  : "bg-white text-[#1A1A1A] hover:bg-white/90"
+                  ? "bg-[#2b6e4c] text-white"
+                  : "text-[#3d5a4c] hover:bg-[#eff3ef]"
               }`}
             >
               {tab.label}
@@ -87,7 +87,7 @@ export default function AudienceTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
-            className="mt-6 rounded-xl bg-white p-8 shadow-sm"
+            className="tone-panel mt-6 rounded-[2.25rem] p-8"
           >
             <p className="text-[#1A1A1A]/85 leading-relaxed">{current?.content}</p>
           </motion.div>

@@ -49,7 +49,7 @@ function ExperienceCard({ title, description, image, alt, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#1A1A1A] shadow-xl"
+      className="tone-card group relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-[#1A1A1A]"
     >
       <Image
         src={image}
@@ -72,12 +72,12 @@ export default function Experiences() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experiences" className="bg-[#F6F1E9] py-24 md:py-32" ref={ref}>
+    <section id="experiences" className="bg-[#F6F1E9] pb-14 pt-10 md:pb-18 md:pt-12" ref={ref}>
       <div className="mx-auto max-w-7xl px-6">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7A5230]"
+          className="text-sm font-semibold uppercase tracking-[0.15em] text-[#5f6c66]"
         >
           What we offer
         </motion.span>
@@ -85,7 +85,7 @@ export default function Experiences() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.05 }}
-          className="mt-2 font-serif text-3xl font-medium text-[#1F3D2B] sm:text-4xl"
+          className="mt-2 text-4xl font-semibold text-[#1f543e]"
         >
           Experiences
         </motion.h2>
@@ -93,7 +93,7 @@ export default function Experiences() {
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="mt-3 max-w-xl text-[#1A1A1A]/75"
+          className="mt-3 max-w-xl text-[#5f6c66]"
         >
           From summit treks to cultural immersion, find the experience that fits you.
         </motion.p>

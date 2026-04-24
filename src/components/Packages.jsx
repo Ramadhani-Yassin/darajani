@@ -152,13 +152,13 @@ function PackageCard({ item, index, inView }) {
       initial={{ opacity: 0, y: 14 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4, delay: 0.04 + index * 0.03 }}
-      className="flex h-full flex-col rounded-2xl border border-[#1F3D2B]/10 bg-white p-7 shadow-sm md:p-8"
+      className="tone-card flex h-full flex-col rounded-[1.75rem] p-7 md:p-8"
     >
       <div className="flex items-start gap-3.5">
-        <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#1F3D2B]/12 bg-[#F6F1E9]">
+        <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#1F3D2B]/12 bg-[#fefaf5]">
           <PackageIcon name={item.icon} />
         </span>
-        <h3 className="min-w-0 flex-1 font-serif text-lg font-medium leading-snug text-[#1F3D2B] sm:text-xl">{item.title}</h3>
+        <h3 className="min-w-0 flex-1 text-lg font-semibold leading-snug text-[#1f543e] sm:text-xl">{item.title}</h3>
       </div>
       <p className="mt-4 text-[15px] leading-relaxed text-[#1A1A1A]/80 md:text-base">{item.body}</p>
     </motion.article>
@@ -292,26 +292,35 @@ export default function Packages() {
   const onNext = useCallback(() => {
     setLightboxIndex((i) => (i === null ? i : (i + 1) % len));
   }, [len]);
+  const packageLayoutClass = (index) => {
+    if (index === 0) return "lg:col-start-1 lg:col-span-3";
+    if (index === 1) return "lg:col-start-4 lg:col-span-3";
+    if (index === 2) return "lg:col-start-1 lg:col-span-3";
+    if (index === 3) return "lg:col-start-4 lg:col-span-3";
+    return "lg:col-start-2 lg:col-span-3";
+  };
 
   return (
-    <section id="packages" className="bg-[#F6F1E9] py-24 md:py-32" ref={ref}>
+    <section id="packages" className="bg-[#fefcf7] py-14 md:py-18" ref={ref}>
       <GalleryLightbox activeIndex={lightboxIndex} onClose={onClose} onPrev={onPrev} onNext={onNext} />
 
       <div className="mx-auto max-w-6xl px-6">
         <motion.header
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="border-b border-[#1F3D2B]/12 pb-10 text-center md:pb-12"
+          className="pb-10 text-center md:pb-12"
         >
-          <h2 className="font-serif text-xl font-medium uppercase tracking-[0.14em] text-[#1F3D2B] sm:text-2xl md:text-[1.65rem] md:leading-snug">
+          <h2 className="text-2xl font-semibold uppercase tracking-[0.08em] text-[#1f543e] sm:text-3xl md:leading-snug">
             {MAIN_TITLE}
           </h2>
         </motion.header>
 
         <div className="mx-auto mt-12 max-w-5xl md:mt-14">
-          <div className="grid gap-6 sm:grid-cols-2 lg:gap-7">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-7">
             {PACKAGE_ITEMS.map((item, i) => (
-              <PackageCard key={item.title} item={item} index={i} inView={inView} />
+              <div key={item.title} className={packageLayoutClass(i)}>
+                <PackageCard item={item} index={i} inView={inView} />
+              </div>
             ))}
           </div>
         </div>
@@ -321,11 +330,11 @@ export default function Packages() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.22 }}
-          className="mx-auto mt-20 max-w-6xl scroll-mt-24 border-t border-[#1F3D2B]/12 pt-14 md:mt-24 md:pt-16"
+          className="mx-auto mt-12 max-w-6xl scroll-mt-24 pt-8 md:mt-14 md:pt-10"
         >
           <div className="mb-8 md:mb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#7A5230]">Gallery</p>
-            <h3 className="mt-2 font-serif text-2xl font-medium text-[#1F3D2B] sm:text-3xl">Darajani property</h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5f6c66]">Gallery</p>
+            <h3 className="mt-2 text-4xl font-semibold text-[#1f543e]">Darajani property</h3>
           </div>
 
           <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3">
@@ -336,7 +345,7 @@ export default function Packages() {
                   onClick={() => setLightboxIndex(i)}
                   className="group w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F3D2B]"
                 >
-                  <figure className="overflow-hidden rounded-2xl border border-[#1F3D2B]/10 bg-white shadow-md transition group-hover:border-[#1F3D2B]/22 group-hover:shadow-lg">
+                  <figure className="tone-card overflow-hidden rounded-[1.5rem] transition group-hover:border-[#1F3D2B]/22">
                     <div className="relative aspect-[4/3] w-full min-h-[200px] sm:min-h-[240px] lg:min-h-[260px]">
                       <Image
                         src={gallerySrc(item.file)}

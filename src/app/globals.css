@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
-/* Darajani – Earth-inspired palette */
 :root {
-  --forest: #1F3D2B;
-  --warm-brown: #7A5230;
-  --sand: #F6F1E9;
-  --charcoal: #1A1A1A;
-  --forest-light: #2d5a3f;
-  --warm-brown-light: #9a6b45;
+  --forest: #1f543e;
+  --forest-2: #2b6e4c;
+  --sand: #f6f1e9;
+  --cream: #f8f3e9;
+  --charcoal: #1e2a2f;
+  --muted: #5f6c66;
 }
 
 @theme inline {
   --color-forest: var(--forest);
-  --color-warm-brown: var(--warm-brown);
+  --color-forest-2: var(--forest-2);
   --color-sand: var(--sand);
+  --color-cream: var(--cream);
   --color-charcoal: var(--charcoal);
-  --color-forest-light: var(--forest-light);
-  --color-warm-brown-light: var(--warm-brown-light);
+  --color-muted: var(--muted);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-lato);
 }
@@ -34,6 +33,46 @@ body {
   color: var(--charcoal);
   font-family: var(--font-lato), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.tone-card {
+  background: #fff;
+  border: 1px solid #ece5d8;
+  border-radius: 1.75rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.tone-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.09);
+}
+
+.tone-pill {
+  border-radius: 999px;
+  border: 1px solid #dbd2c4;
+  background: #fefaf5;
+}
+
+.tone-btn {
+  border-radius: 999px;
+  background: var(--forest-2);
+  color: #fff;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.tone-btn:hover {
+  background: #1e553b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tone-panel {
+  background: #fff;
+  border: 1px solid #eae4d8;
+  border-radius: 2.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#1F3D2B]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled ? "bg-[#1f543e]/95 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
@@ -48,7 +48,9 @@ export default function Header() {
             <Link
               key={href}
               href={href}
-              className="text-sm font-medium text-white/90 transition hover:text-white"
+              className={`text-sm font-medium transition ${
+                scrolled ? "text-white/90 hover:text-white" : "text-white/90 hover:text-[#b9e7cf]"
+              }`}
             >
               {label}
             </Link>
@@ -61,7 +63,9 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           <span
-            className={`h-0.5 w-6 bg-white transition-all ${
+            className={`h-0.5 w-6 transition-all ${
+              "bg-white"
+            } ${
               open ? "translate-y-2 rotate-45" : ""
             }`}
           />
@@ -79,14 +83,14 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden bg-[#1F3D2B] md:hidden"
+            className="overflow-hidden bg-[#fefcf7] shadow-lg md:hidden"
           >
             <nav className="flex flex-col gap-1 px-6 pb-6 pt-2">
               {NAV.map(({ href, label }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="py-3 text-white/90 hover:text-white"
+                  className="py-3 text-[#2d3e38] hover:text-[#2b6e4c]"
                   onClick={() => setOpen(false)}
                 >
                   {label}

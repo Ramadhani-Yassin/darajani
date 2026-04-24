@@ -113,7 +113,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-12 text-center text-sm text-white/50">
-          © {new Date().getFullYear()} Darajani. All rights reserved.
+          © {new Date().getFullYear()} Darajani. All rights reserved. Proudly operated by Duluti Optima GS Ltd, Tanzania.
         </p>
       </div>
     </footer>

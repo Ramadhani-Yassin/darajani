@@ -64,13 +64,14 @@ export default function AudienceTabs() {
         >
           Whether you&apos;re a traveller, agent, NGO, or school, we have something for you.
         </motion.p>
-        <div className="mt-10 flex flex-wrap justify-center gap-3 border-b border-[#ddd8cf] pb-4">
+        <div className="no-scrollbar mt-10 -mx-6 overflow-x-auto border-b border-[#ddd8cf] px-6 pb-4 md:mx-0 md:px-0">
+          <div className="flex w-max min-w-full gap-3 md:w-full md:justify-center">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActive(tab.id)}
-              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${
+              className={`shrink-0 rounded-full px-6 py-2.5 text-sm font-semibold transition ${
                 active === tab.id
                   ? "bg-[#2b6e4c] text-white"
                   : "text-[#3d5a4c] hover:bg-[#eff3ef]"
@@ -79,6 +80,7 @@ export default function AudienceTabs() {
               {tab.label}
             </button>
           ))}
+          </div>
         </div>
         <AnimatePresence mode="wait">
           <motion.div

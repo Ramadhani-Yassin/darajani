@@ -10,7 +10,8 @@ const BUDGET_OPTIONS = ["Budget", "Mid-range", "Premium"];
 export default function Booking() {
   const [form, setForm] = useState({
     name: "",
-    dates: "",
+    startDate: "",
+    endDate: "",
     groupSize: "",
     budgetTier: "",
     interests: "",
@@ -25,7 +26,8 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const text = `Name: ${form.name}\nDates: ${form.dates}\nGroup size: ${form.groupSize}\nBudget: ${form.budgetTier}\nInterests: ${form.interests}`;
+    const dateRange = [form.startDate, form.endDate].filter(Boolean).join(" to ");
+    const text = `Name: ${form.name}\nDates: ${dateRange}\nGroup size: ${form.groupSize}\nBudget: ${form.budgetTier}\nInterests: ${form.interests}`;
     window.open(`${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -78,18 +80,30 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label htmlFor="dates" className="mb-1.5 block text-sm font-semibold text-[#2d3e38]">
+            <label className="mb-1.5 block text-sm font-semibold text-[#2d3e38]">
               Dates
             </label>
-            <input
-              id="dates"
-              name="dates"
-              type="text"
-              value={form.dates}
-              onChange={handleChange}
-              className="tone-pill w-full px-5 py-3 text-[#1e2a2f] placeholder-[#6f7a74] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20"
-              placeholder="Preferred dates"
-            />
+            <div className="grid gap-3 sm:grid-cols-2">
+              <input
+                id="startDate"
+                name="startDate"
+                type="date"
+                value={form.startDate}
+                onChange={handleChange}
+                className="tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20"
+                aria-label="Start date"
+              />
+              <input
+                id="endDate"
+                name="endDate"
+                type="date"
+                min={form.startDate || undefined}
+                value={form.endDate}
+                onChange={handleChange}
+                className="tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20"
+                aria-label="End date"
+              />
+            </div>
           </div>
           <div>
             <label htmlFor="groupSize" className="mb-1.5 block text-sm font-semibold text-[#2d3e38]">

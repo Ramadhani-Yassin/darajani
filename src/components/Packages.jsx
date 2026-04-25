@@ -112,7 +112,7 @@ const PACKAGE_ITEMS = [
   {
     icon: "sightseeing",
     title: "Kilimanjaro & Arusha Sightseeing",
-    body: "Waterfalls, hot springs, coffee traditions and immersive cultural programs.",
+    body: "Waterfalls, hot springs, coffee tradition and immersive cultural programs.",
   },
   {
     icon: "biology",

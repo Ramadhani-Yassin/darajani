@@ -55,6 +55,101 @@ body {
   background: #fefaf5;
 }
 
+.date-overlay-placeholder {
+  pointer-events: none;
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6f7a74;
+  font-size: 0.95rem;
+  z-index: 1;
+}
+
+/* Hide native date ghost text (mm/dd/yyyy) when empty so custom placeholder stays clean. */
+.date-input-empty::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.date-input-empty::-webkit-date-and-time-value {
+  color: transparent;
+}
+
+.date-input-empty {
+  color: transparent;
+}
+
+.date-input-empty::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
+
+.mobile-drawer {
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  background: #fefcf7;
+  border-right: 1px solid #e4dcca;
+  box-shadow: 14px 0 44px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mobile-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 1.25rem 1rem;
+  border-bottom: 1px solid #e9e1d4;
+}
+
+.mobile-drawer-brand {
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: #1f543e;
+  letter-spacing: -0.01em;
+}
+
+.mobile-drawer-close {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid #d8d0c2;
+  background: #f7f1e5;
+  color: #29453b;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.mobile-drawer-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 1rem 1.2rem;
+  overflow-y: auto;
+}
+
+.mobile-drawer-link {
+  display: block;
+  padding: 0.95rem 0.75rem;
+  border-bottom: 1px solid #e9e1d4;
+  color: #2d3e38;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.7rem;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.mobile-drawer-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-drawer-link:hover,
+.mobile-drawer-link:focus-visible {
+  color: #1f543e;
+  background: #f3ede2;
+  outline: none;
+}
+
 .tone-btn {
   border-radius: 999px;
   background: var(--forest-2);

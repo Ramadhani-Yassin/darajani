@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV = [
+  { href: "#hero", label: "Home" },
   { href: "#experiences", label: "Experiences" },
   { href: "#packages", label: "Packages" },
   { href: "#gallery", label: "Gallery" },
@@ -23,6 +24,13 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <header
@@ -79,25 +87,49 @@ export default function Header() {
       </div>
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden bg-[#fefcf7] shadow-lg md:hidden"
-          >
-            <nav className="flex flex-col gap-1 px-6 pb-6 pt-2">
-              {NAV.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="py-3 text-[#2d3e38] hover:text-[#2b6e4c]"
+          <>
+            <motion.button
+              type="button"
+              aria-label="Close menu overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-[#0d1f17]/50 backdrop-blur-[2px] md:hidden"
+              onClick={() => setOpen(false)}
+            />
+            <motion.aside
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", stiffness: 330, damping: 34 }}
+              className="mobile-drawer fixed inset-y-0 left-0 z-50 w-[88vw] max-w-sm md:hidden"
+            >
+              <div className="mobile-drawer-top">
+                <span className="mobile-drawer-brand">Menu</span>
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  className="mobile-drawer-close"
                   onClick={() => setOpen(false)}
                 >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
+                  ✕
+                </button>
+              </div>
+              <nav className="mobile-drawer-body">
+                {NAV.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="mobile-drawer-link"
+                    onClick={() => setOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            </motion.aside>
+          </>
         )}
       </AnimatePresence>
     </header>

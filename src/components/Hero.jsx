@@ -9,7 +9,7 @@ const EMAIL = "info@darajanikilimanjaro.com";
 
 export default function Hero() {
   return (
-    <section className="relative mb-14 flex min-h-screen items-center justify-center overflow-hidden">
+    <section id="hero" className="relative mb-14 flex min-h-screen items-center justify-center overflow-hidden">
       <Image
         src="/assets/kilimanjaro-sun-set.png"
         alt="Mount Kilimanjaro at sunset"

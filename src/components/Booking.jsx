@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
 const WHATSAPP = "https://wa.me/255764101435";
 const BUDGET_OPTIONS = ["Budget", "Mid-range", "Premium"];
 
 export default function Booking() {
+  const startDateRef = useRef(null);
+  const endDateRef = useRef(null);
   const [form, setForm] = useState({
     name: "",
     startDate: "",
@@ -19,6 +20,19 @@ export default function Booking() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
+  const openDatePicker = (inputRef) => {
+    if (!inputRef?.current) return;
+    if (typeof inputRef.current.showPicker === "function") {
+      try {
+        inputRef.current.showPicker();
+      } catch {
+        inputRef.current.focus();
+      }
+      return;
+    }
+    inputRef.current.focus();
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -27,7 +41,15 @@ export default function Booking() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const dateRange = [form.startDate, form.endDate].filter(Boolean).join(" to ");
-    const text = `Name: ${form.name}\nDates: ${dateRange}\nGroup size: ${form.groupSize}\nBudget: ${form.budgetTier}\nInterests: ${form.interests}`;
+    const text = `Hello Darajani Motel Team,
+
+I am interested in arranging a stay at Darajani Motel and exploring your available service packages.
+
+Name: ${form.name}
+Stay dates: ${dateRange || "Not specified"}
+Group size: ${form.groupSize || "Not specified"}
+Budget tier: ${form.budgetTier || "Not specified"}
+Interests: ${form.interests || "Not specified"}`;
     window.open(`${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -84,25 +106,41 @@ export default function Booking() {
               Dates
             </label>
             <div className="grid gap-3 sm:grid-cols-2">
-              <input
-                id="startDate"
-                name="startDate"
-                type="date"
-                value={form.startDate}
-                onChange={handleChange}
-                className="tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20"
-                aria-label="Start date"
-              />
-              <input
-                id="endDate"
-                name="endDate"
-                type="date"
-                min={form.startDate || undefined}
-                value={form.endDate}
-                onChange={handleChange}
-                className="tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20"
-                aria-label="End date"
-              />
+              <div className="relative" onClick={() => openDatePicker(startDateRef)}>
+                {!form.startDate && (
+                  <span className="date-overlay-placeholder">Stay Start Date</span>
+                )}
+                <input
+                  ref={startDateRef}
+                  id="startDate"
+                  name="startDate"
+                  type="date"
+                  value={form.startDate}
+                  onChange={handleChange}
+                  className={`tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20 ${
+                    !form.startDate ? "date-input-empty" : ""
+                  }`}
+                  aria-label="Stay start date"
+                />
+              </div>
+              <div className="relative" onClick={() => openDatePicker(endDateRef)}>
+                {!form.endDate && (
+                  <span className="date-overlay-placeholder">Stay End Date</span>
+                )}
+                <input
+                  ref={endDateRef}
+                  id="endDate"
+                  name="endDate"
+                  type="date"
+                  min={form.startDate || undefined}
+                  value={form.endDate}
+                  onChange={handleChange}
+                  className={`tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20 ${
+                    !form.endDate ? "date-input-empty" : ""
+                  }`}
+                  aria-label="Stay end date"
+                />
+              </div>
             </div>
           </div>
           <div>
@@ -131,7 +169,7 @@ export default function Booking() {
               className="tone-pill w-full px-5 py-3 text-[#1e2a2f] focus:border-[#2b6e4c] focus:outline-none focus:ring-2 focus:ring-[#2b6e4c]/20"
             >
               <option value="">
-                Select
+                Select budget tier
               </option>
               {BUDGET_OPTIONS.map((opt) => (
                 <option key={opt} value={opt}>

@@ -11,34 +11,24 @@ function gallerySrc(filename) {
 
 const GALLERY_IMAGES = [
   {
-    file: "annex-bar--distant view.jpeg",
-    alt: "Annex bar with distant mountain views",
-    caption: "Views from the annex",
-  },
-  {
-    file: "annex-bar-area.jpeg",
-    alt: "Annex bar and lounge area at Darajani",
-    caption: "Lounge & annex",
-  },
-  {
     file: "front-darajani -motel.jpeg",
     alt: "Darajani motel exterior and welcome area",
-    caption: "Darajani base",
+    caption: "DJ001",
   },
   {
     file: "Bedroom.jpeg",
     alt: "Comfortable guest bedroom",
-    caption: "Guest rooms",
+    caption: "DJ002",
   },
   {
     file: "Bedroom--2.jpeg",
     alt: "Bright guest bedroom interior",
-    caption: "Pre & post-stay comfort",
+    caption: "DJ003",
   },
   {
     file: "the green look.jpeg",
     alt: "Lush green grounds and landscaping at Darajani",
-    caption: "The green look",
+    caption: "DJ004",
   },
 ];
 
@@ -127,7 +117,7 @@ const PACKAGE_ITEMS = [
   {
     icon: "biology",
     title: "Study Abroad & Volunteering",
-    body: "Tailor-made study abroad, and volunteering programs, focused on child education, ecology Biomedical &healthcare, and community development.",
+    body: "Tailor-made study abroad, and volunteering programs, focused on early childhood education, ecology, biomedical & healthcare, and community services",
   },
   {
     icon: "circuit",
@@ -334,7 +324,7 @@ export default function Packages() {
         >
           <div className="mb-8 md:mb-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5f6c66]">Gallery</p>
-            <h3 className="mt-2 text-4xl font-semibold text-[#1f543e]">Darajani property</h3>
+            <h3 className="mt-2 text-4xl font-semibold text-[#1f543e]">Amenities & Outdoor Spaces</h3>
           </div>
 
           <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3">

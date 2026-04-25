@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const WHATSAPP = "https://wa.me/255764101435";
-const EMAIL = "info@darajani.com";
+const EMAIL = "info@darajanikilimanjaro.com";
 
 export default function Hero() {
   return (

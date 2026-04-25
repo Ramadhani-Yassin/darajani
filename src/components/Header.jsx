@@ -51,7 +51,7 @@ export default function Header() {
             />
           </span>
         </Link>
-        <nav className="hidden md:flex md:items-center md:gap-10">
+        <nav className="hidden lg:flex lg:items-center lg:gap-10">
           {NAV.map(({ href, label }) => (
             <Link
               key={href}
@@ -66,7 +66,7 @@ export default function Header() {
         </nav>
         <button
           type="button"
-          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -95,7 +95,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-[#0d1f17]/50 backdrop-blur-[2px] md:hidden"
+              className="fixed inset-0 z-40 bg-[#0d1f17]/50 backdrop-blur-[2px] lg:hidden"
               onClick={() => setOpen(false)}
             />
             <motion.aside
@@ -103,7 +103,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", stiffness: 330, damping: 34 }}
-              className="mobile-drawer fixed inset-y-0 left-0 z-50 w-[88vw] max-w-sm md:hidden"
+              className="mobile-drawer fixed inset-y-0 left-0 z-50 w-[88vw] max-w-sm lg:hidden"
             >
               <div className="mobile-drawer-top">
                 <span className="mobile-drawer-brand">Menu</span>
